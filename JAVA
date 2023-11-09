@@ -1,0 +1,391 @@
+BASIC CALCULATOR
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    char operator;
+    Double number1, number2, result;
+    Scanner input = new Scanner(System.in);
+    System.out.println("Choose an operator: +, -, *, or /");
+    operator = input.next().charAt(0);
+    System.out.println("Enter first number");
+    number1 = input.nextDouble();
+    System.out.println("Enter second number");
+    number2 = input.nextDouble();
+    switch (operator) {
+      case '+':
+        result = number1 + number2;
+        System.out.println(number1 + " + " + number2 + " = " + result);
+        break;
+      case '-':
+        result = number1 - number2;
+        System.out.println(number1 + " - " + number2 + " = " + result);
+        break;
+      case '*':
+        result = number1 * number2;
+        System.out.println(number1 + " * " + number2 + " = " + result);
+        break;
+      case '/':
+        result = number1 / number2;
+        System.out.println(number1 + " / " + number2 + " = " + result);
+        break;
+      default:
+        System.out.println("Invalid operator!");
+        break;
+    }
+    input.close();
+  }
+}
+
+ASCENDING AND DESCENDING ORDER
+
+import java.util.Scanner;
+public class ArraySortingExample {
+    public static void main(String[] args) {
+        Scanner ed = new Scanner(System.in);
+        int[] a = new int[5];
+        int i, j, temp;
+        System.out.println("Please Enter 5 elements in the Array");
+        for (i = 0; i < 5; i++) {
+            a[i] = ed.nextInt();
+        }
+        for (i = 0; i < 5; i++) {
+            for (j = i + 1; j < 5; j++) {
+                if (a[i] > a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        System.out.println("Sorted Array in Increasing Order:-");
+        for (j = 0; j < 5; j++) {
+            System.out.println(a[j]);
+        }
+        for (i = 0; i < 5; i++) {
+            for (j = i + 1; j < 5; j++) {
+                if (a[i] < a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        System.out.println("Sorted Array in Decreasing Order:-");
+        for (j = 0; j < 5; j++) {
+            System.out.println(a[j]);
+        }
+    }
+}
+
+UPPERCASE TO LOWERCASE/ LOWERCASE TO UPPERCASE
+
+//Program1 (upper to lowercase)
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	char arr[] = "ENGINEERING";
+	cout << "Original String: \n" << arr<< endl;
+	cout << "String in lowercase:\n";
+	for (int x=0; x<strlen(arr); x++)
+		putchar(tolower(arr[x]));
+	return 0;
+}
+
+//Program2 (lower to uppercase)
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	char arr[] = "engineering";
+	cout << "Original String: \n" << arr<< endl;
+	cout << "String in UPPERCASE:\n";
+	for (int x=0; x<strlen(arr); x++)
+		putchar(toupper(arr[x]));
+	return 0;
+}
+
+DISPLAY ELEMENTS OF 1D AND 2D ARRAY
+
+//Program1(1D ARRAY)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+        int arr[50], num, i;
+        cout<<"\n How Many Elements You Want to Store into an Array? \n";
+        cin>>num;
+        cout<<"\n Enter "<<num<<" Elements to Store into an Array : \n";
+        for(i=0; i<num; i++)
+        {
+                cin>>arr[i];
+        }
+        cout<<"\n The Elements in the Array are : \n";
+        for(i=0; i<num; i++)
+        {
+                cout<<arr[i]<<"\t";
+        }
+        return 0;
+}
+
+
+//Program2(2D ARRAY)
+
+#include<iostream>
+using namespace std;
+int main()
+{
+        int arr[10][10], rows, cols, i, j;
+        cout<<"\n Enter Rows for Array (Max 10) : ";
+        cin>>rows;
+        cout<<"\n Enter Columns for Array (Max 10) : ";
+        cin>>cols;
+        cout<<"\n Enter "<<rows<<"*"<<cols<<" Array Elements : \n";
+        for(i=0; i<rows; i++)
+        {
+                for(j=0; j<cols; j++)
+                {
+                        cout<<" ";
+                        cin>>arr[i][j];
+                }
+        }
+        cout<<"\n Two Dimensional Array is : \n";
+        for(i=0; i<rows; i++)
+        {
+                for(j=0; j<cols; j++)
+                {
+                        cout<<" "<<arr[i][j]<<" ";
+                }
+                cout<<"\n";
+        }
+        return 0;
+}
+
+ADDING 1D AND 2D ARRAYS
+//Program1(Sum of 1D arrays)
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int first[20], second[20], sum[20], c, n;
+	cout << "Enter the number of elements in the array ";
+  	cin >> n;
+  	cout << "Enter elements of first array" << endl;
+  	for (c = 0; c < n; c++)
+    	cin >> first[c];
+  	cout << "Enter elements of second array" << endl;
+  	for (c = 0; c < n; c++)
+    	cin >> second[c];
+ 	cout << "Sum of elements of the arrays:" << endl;
+  	for (c = 0; c < n; c++) 
+	{
+    		sum[c] = first[c] + second[c];
+    		cout << sum[c] << endl;
+  	}
+  	return 0;
+}
+
+//Program2(sum of 2D arrays)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int r, c, a[100][100], b[100][100], sum[100][100], i, j;
+    	cout << "Enter number of rows (between 1 and 100): ";
+    	cin >> r;
+    	cout << "Enter number of columns (between 1 and 100): ";
+    	cin >> c;
+    	cout << endl << "Enter elements of 1st matrix: " << endl;
+	for(i = 0; i < r; ++i)
+       	for(j = 0; j < c; ++j)
+	{
+		cout << "Enter element a" << i + 1 << j + 1 << " : ";
+		cin >> a[i][j];
+	}
+	cout << endl << "Enter elements of 2nd matrix: " << endl;
+    	for(i = 0; i < r; ++i)
+       	for(j = 0; j < c; ++j)
+       	{
+		cout << "Enter element b" << i + 1 << j + 1 << " : ";
+           	cin >> b[i][j];
+	}
+    	for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+		sum[i][j] = a[i][j] + b[i][j];
+		cout << endl << "Sum of two matrix is: " << endl;
+    	for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+        {
+        	cout << sum[i][j] << "  ";
+            	if(j == c - 1)
+		cout << endl;
+        }
+    	return 0;
+}
+
+TRANSPOSE OF MATRIX
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[10][10], transpose[10][10], row, column, i, j;
+   	cout << "Enter rows and columns of matrix: ";
+   	cin >> row >> column;
+   	cout << "\nEnter elements of matrix: " << endl;
+   	for (int i = 0; i < row; ++i) 
+	{
+      	for (int j = 0; j < column; ++j)
+	{
+        	cout << "Enter element a" << i + 1 << j + 1 << ": ";
+        	cin >> a[i][j];
+	}
+	}
+   	cout << "\nEntered Matrix: " << endl;
+   	for (int i = 0; i < row; ++i)
+	{
+      	for (int j = 0; j < column; ++j)
+	{
+         	cout << " " << a[i][j];
+         	if (j == column - 1)
+            	cout << endl << endl;
+	}
+	}
+    	for (int i = 0; i < row; ++i)
+      	for (int j = 0; j < column; ++j) 
+	{
+        	transpose[j][i] = a[i][j];
+	}
+   	cout << "\nTranspose of Matrix: " << endl;
+   	for (int i = 0; i < column; ++i)
+      	for (int j = 0; j < row; ++j) 
+	{
+		cout << " " << transpose[i][j];
+         	if (j == row - 1)
+            	cout << endl << endl;
+	}
+    	return 0;
+}
+
+STUDENT DETAILS
+
+
+#include <iostream>
+using namespace std;
+struct Student 
+{
+	string name;
+    	int rollNo;
+    	char gender;
+    	double percentage;
+};
+int main() 
+{
+    	int N;
+    	cout << "Enter the number of students: ";
+    	cin >> N;
+    	Student students[N];
+    	for (int i = 0; i < N; i++) 
+    	{
+        	cout << "Enter details for Student " << i + 1 << ":" << endl;
+        	cout << "Name: ";
+        	cin >> students[i].name;
+        	cout << "Roll No: ";
+        	cin >> students[i].rollNo;
+        	cout << "Gender (M/F): ";
+        	cin >> students[i].gender;
+        	cout << "Percentage: ";
+        	cin >> students[i].percentage;
+    	}
+    	cout << "Student Details:" << endl;
+    	for (int i = 0; i < N; i++) 
+    	{
+        	cout << "Student " << i + 1 << " Details:" << endl;
+        	cout << "Name: " << students[i].name << endl;
+        	cout << "Roll No: " << students[i].rollNo << endl;
+        	cout << "Gender: " << students[i].gender << endl;
+        	cout << "Percentage: " << students[i].percentage << "%" << endl;
+    	}
+    	return 0;
+}
+
+DEFINE CLASS STRUCTURE ETC
+
+#include <iostream>
+using namespace std;
+class Room 
+{
+	private:
+    	double length;
+    	double breadth;
+    	public:
+    	Room()
+	{
+        	length = 6.9;
+        	breadth = 4.2;
+    	}
+    	Room(double l, double b)
+	{
+        	length = l;
+        	breadth = b;
+    	}
+   	Room(double len)
+	{
+        	length = len;
+        	breadth = 7.2;
+    	}
+    	double calculateArea()
+	{
+        	return length * breadth;
+    	}
+};
+int main()
+{
+   	Room room1, room2(8.2, 6.6), room3(8.2);
+   	cout << "When no argument is passed: " << endl;
+    	cout << "Area of room = " << room1.calculateArea() << endl;
+    	cout << "\nWhen (8.2, 6.6) is passed." << endl;
+    	cout << "Area of room = " << room2.calculateArea() << endl;
+    	cout << "\nWhen breadth is fixed to 7.2 and (8.2) is passed:" << endl;
+    	cout << "Area of room = " << room3.calculateArea() << endl;
+    	return 0;
+}
+
+INHERITANCE
+
+#include <iostream>
+using namespace std;
+class Animal
+{
+ 	public:
+    	void eat()
+	{
+        	cout << "I can eat!" << endl;
+    	}
+    	void sleep() 
+	{
+        	cout << "I can sleep!" << endl;
+    	}
+};
+class Dog : public Animal 
+{
+   	public:
+   	void bark()
+	{
+        	cout << "I can bark! Woof woof!!" << endl;
+    	}
+};
+int main() 
+{
+	Dog dog1;
+	dog1.eat();
+	dog1.sleep();
+	dog1.bark();
+	return 0;
+}
